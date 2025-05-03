@@ -9,6 +9,7 @@ const subjectSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    //when the subject meets
     sessions: {
         type: String,
         required: true,
