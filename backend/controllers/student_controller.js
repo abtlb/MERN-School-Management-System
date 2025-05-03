@@ -187,7 +187,8 @@ const studentAttendance = async (req, res) => {
                 a.date.toDateString() === new Date(date).toDateString() &&
                 a.subName.toString() === subName
         );
-
+        
+        //update the existing attendance record
         if (existingAttendance) {
             existingAttendance.status = status;
         } else {
@@ -199,7 +200,8 @@ const studentAttendance = async (req, res) => {
             if (attendedSessions >= subject.sessions) {
                 return res.send({ message: 'Maximum attendance limit reached' });
             }
-
+        
+            //otherwise add the attendance recorrd
             student.attendance.push({ date, status, subName });
         }
 

@@ -13,6 +13,7 @@ async function startServer() {
   const app = express();
 
   app.use(express.json({ limit: '10mb' }));
+  //to allow different origins
   app.use(cors());
 
   // --- connect to MongoDB ---
